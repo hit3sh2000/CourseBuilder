@@ -20,6 +20,7 @@ function DisplayCard() {
     const [coursedata, setCoursedata] = useState([]);
     const fetchItem = async () => {
         const c4 = await axios.get(`/cart/cartItems/${localStorage.getItem("user")}`)
+        console.log(c4.data);
         return c4
     };
     // const [cart, setCart] = useState([]);

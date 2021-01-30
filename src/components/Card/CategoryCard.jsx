@@ -11,14 +11,9 @@ function CategoryCard({ match }) {
       });
   }, [])
   const fetchItem = async () => {
-    if (localStorage.getItem("token")) {
       const course = await axios.get(`/category/${match.params.id}`)
       console.log(course);
       return course
-    }else{
-      console.log("Login in first");
-      return <div>Login in first</div>
-    }
   };
 
   const [courseitems, setCourseitems] = useState([]);

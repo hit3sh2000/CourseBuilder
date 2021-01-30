@@ -27,7 +27,7 @@ function Authnav() {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                     <img
                         src="https://i.imgur.com/F2YUwme.png"
                         width="50"

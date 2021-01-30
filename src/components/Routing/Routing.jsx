@@ -34,10 +34,11 @@ function Routing() {
                 <Route path="/category/:id" exact component={CategoryCard} />
                 <Route path="/course/:cid" component={UniversityCard} />
                 <Route path="/university/course/:cid/:uid" component={Fulldetails} />
-                <Route path="/cart/:cid/:usid" exact component={Cart} />
-                <Route path="/cart" exact component={DisplayCart} />
-                <Route path="/logout" exact component={Logout} />
-                <Route path="/cart/remove/:cid" exact component={RemoveCart} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/cart/:cid/:usid" exact component={Cart} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/cart" exact component={DisplayCart} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/logout" exact component={Logout} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/cart/remove/:cid" exact component={RemoveCart} />
+                
             </div>
         </Router>
     )
