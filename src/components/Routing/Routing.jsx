@@ -12,6 +12,8 @@ import Authnav from "../TopNav/Authnav";
 import Cart from "../Cart/Cart";
 import DisplayCart from "../Cart/DisplayCart";
 import RemoveCart from "../Cart/RemoveCart";
+import Payment from "../Payment/Payment";
+import PaymentStatus from "../Payment/PaymentStatus";
 import ProtectedRoute from "../ProtectedRoute";
 
 function Routing() {
@@ -38,6 +40,8 @@ function Routing() {
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/cart" exact component={DisplayCart} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/logout" exact component={Logout} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/cart/remove/:cid" exact component={RemoveCart} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/payment" exact component={Payment} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/paymentstatus" exact component={PaymentStatus} />
                 
             </div>
         </Router>

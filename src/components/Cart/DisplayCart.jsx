@@ -6,15 +6,15 @@ import RemoveCart from "./RemoveCart";
 // import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 // import TotalAmount from "./TotalAmount";
 function DisplayCard() {
-    
     useEffect(() => {
         fetchItem()
             .then(res => {
                 setCoursedata(res.data.details)
                 setTotal(res.data.total)
+                localStorage.setItem('total',res.data.total)
             });
     }, [])
-
+    
     const [total, setTotal] = useState([]);
 
     const [coursedata, setCoursedata] = useState([]);
@@ -23,21 +23,7 @@ function DisplayCard() {
         console.log(c4.data);
         return c4
     };
-    // const [cart, setCart] = useState([]);
-    // async function fetchCart() {
-    //     const cartdata = await axios.post('/cart/cartItems', { "id": localStorage.getItem("user") })
-    //     setTotal(cartdata.data)
-    //     console.log(total);
-    //     return cartdata;
-    // }
-    // useEffect(() => {
-    //     fetchCart()
-    //         // .then(res => {
-    //         //     return setCart(res.data.details)
-    //         //     setTotal(res.data.total)
-    //         //     console.log(cart);
-    //         // });
-    // }, []);
+
     return (
         <div>
             <Row>
@@ -74,7 +60,6 @@ function DisplayCard() {
                                                     type='button'
                                                     variant='danger'
                                                     href={`/cart/remove/${item.courseId._id}`}
-                                                // onClick={removeFromCartHandler(item.courseId._id)}
                                                 > <i><b>Remove</b></i>
                                                     <i className='fas fa-trash'></i>
                                                 </Button>
@@ -92,7 +77,7 @@ function DisplayCard() {
                         <h1>Subtotal ({coursedata.length} items):</h1>
                         <h2>Rs :- {total}</h2>
 
-                        <Button type='button' variant='danger'>
+                        <Button type='button' variant='danger' href={"/payment"}>
                             <i><b>Proceed to Pay</b></i><i className='fas fa-trash'></i>
                         </Button>
                     </div>
