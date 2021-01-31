@@ -5,6 +5,7 @@ function Logout() {
     useEffect(()=>{
         localStorage.removeItem("user")
         localStorage.removeItem("token")
+        localStorage.removeItem("total")
     })
 
     return (

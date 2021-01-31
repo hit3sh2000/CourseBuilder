@@ -30,8 +30,8 @@ function Authnav() {
             <Navbar.Brand href="/">
                     <img
                         src="https://i.imgur.com/F2YUwme.png"
-                        width="50"
-                        height="50"
+                        width="40"
+                        height="40"
                         className="d-inline-block align-top"
                         alt="React Bootstrap logo"
                     /></Navbar.Brand>
@@ -52,7 +52,7 @@ function Authnav() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href='/'>Welcome</Nav.Link>
+                        <Nav.Link href='/user'>Welcome</Nav.Link>
                     </Nav>
 
                     <Nav>
