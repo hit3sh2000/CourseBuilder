@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './TopNav.css';
 import { Navbar, Nav, ButtonGroup, DropdownButton } from 'react-bootstrap';
 import Category from "../Category/Category";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 function Authnav() {
@@ -58,7 +59,7 @@ function Authnav() {
                     <Nav>
                         <Nav.Link href='/AboutUs'>About Us</Nav.Link>
                         <Nav.Link href='/ContactUs'>Contact Us</Nav.Link>
-                        <Nav.Link href='/ContactUs'>Cart</Nav.Link>
+                        <Nav.Link href='/cart'><ShoppingCartIcon/>Cart</Nav.Link>
                         <Nav.Link href='/Logout'>Logout</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

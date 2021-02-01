@@ -1,6 +1,7 @@
 import React,{useState} from "react";
-// import { Navbar,Nav,NavDropdown} from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom'
 import './Logsign.css';
 import axios from "../../axios";
 
@@ -31,7 +32,7 @@ function Signup() {
     }
 
     const handleFinalChange = e =>{
-        e.preventDefault();
+        // e.preventDefault();
         console.log(users);
         axios.post('/user',users)
     }
@@ -94,8 +95,7 @@ function Signup() {
         <label>Address</label>
         <input type="text" className="form-control" placeholder="Enter password" id="U_address" value={U_address} onChange={handleInputChange} />
      </div>
-
-        <button type="submit" className="btn btn-primary btn-block" onClick={handleFinalChange}>Sign Up</button>
+        <Link to={'/login'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Sign Up</Button> </Link>
         <p className="forgot-password text-right">
             Already registered <a href="Login">sign in?</a>
         </p>

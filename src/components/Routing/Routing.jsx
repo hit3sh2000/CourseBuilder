@@ -12,10 +12,13 @@ import Authnav from "../TopNav/Authnav";
 import Cart from "../Cart/Cart";
 import DisplayCart from "../Cart/DisplayCart";
 import RemoveCart from "../Cart/RemoveCart";
+import AboutUs from "../AboutUs/AboutUs";
+import ContactUs from "../ContactUs/ContactUs";
 import Payment from "../Payment/Payment";
 import PaymentStatus from "../Payment/PaymentStatus";
 import User from "../User/User";
 import AllCourse from "../User/AllCourse";
+import Edit from "../User/Edit";
 import ProtectedRoute from "../ProtectedRoute";
 
 function Routing() {
@@ -26,12 +29,12 @@ function Routing() {
             return <TopNav/>
         }
     }
-    
-    
     return (
         <Router>
             <div >
                 <Route path="/"  component={nav} />
+                <Route path="/ContactUs" exact component={ContactUs} />
+                <Route path="/AboutUs" exact component={AboutUs} />
                 <Route path="/" exact component={Dashboard} />
                 <Route path='/login' component={Login} />
                 <Route path="/register" component={Signup} />
@@ -45,6 +48,7 @@ function Routing() {
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/payment" exact component={Payment} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/paymentstatus" exact component={PaymentStatus} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/user" exact component={User} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/edit" exact component={Edit} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/allCourse" exact component={AllCourse} />
                 
             </div>

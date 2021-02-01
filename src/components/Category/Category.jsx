@@ -11,14 +11,12 @@ import { Link } from "react-router-dom";
 
 
 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M7.5 4.5L6.44 5.56 9.88 9l-3.44 3.44L7.5 13.5 12 9z" /></svg>
-
-
 function Category() {
     const [c1, setC1] = useState([])
     // const category = useSelector(state => state.category)
     async function fetchCategory() {
-        const category9 = await axios.get('/category/getcategory')
-        return category9;
+        const catego = await axios.get('/category/getcategory')
+        return catego;
     }
     useEffect(() => {
 
@@ -27,47 +25,26 @@ function Category() {
                 setC1(res.data.categoryList)
                 console.log(res.data.categoryList);
             });
-
-
     }, []);
 
     function addlink(categories) {
         if (categories.children.length > 0) {
             return <TreeItem nodeId={categories._id} label={categories.name}>
-                {/* {console.log(categories.children)} */}
                 {categories.children.length > 0 ? (renderCategory(categories.children)) : null}
             </TreeItem>
-            
         } else {
             return <Link to={`/category/${categories._id}`}><TreeItem nodeId={categories._id} label={categories.name}>
-                {/* {console.log(category.children)} */}
                 {categories.children.length > 0 ? (renderCategory(categories.children)) : null}
             </TreeItem></Link>            
         }
-
     }
-
     const renderCategory = (categories) => {
         let mycategories = [];
         for (let category of categories) {
             mycategories.push(
                 <div>
-                    {/* {category.name}
-
-                        {console.log(category.children)}
-                        {category.children.length > 0 ? (<ul>{renderCategory(category.children)}</ul>) : null}
- */}
-
-
-                    <TreeView
-                        defaultCollapseIcon={<ExpandMoreIcon />}
-                        defaultExpandIcon={<ChevronRightIcon />}
-                    >
+                    <TreeView defaultCollapseIcon={<ExpandMoreIcon />} defaultExpandIcon={<ChevronRightIcon />}>
                         {addlink(category)}
-                        {/* <TreeItem nodeId={category._id} label={category.name}> */}
-                        {/* {console.log(category.children)} */}
-                        {/* {category.children.length > 0 ? (renderCategory(category.children)) : null} */}
-                        {/* </TreeItem> */}
                     </TreeView>
                 </div>
             );
@@ -76,12 +53,12 @@ function Category() {
     }
 
     return (
-        <div>
+        <div style={{backgroundColor: "#2980B9"}}>
 
             <Container>
                 <Row>
                     <Col md={12}>
-                        <div>
+                        <div style={{backgroundColor: "#AED6F1"}} >
                             {renderCategory(c1)}
                         </div>
                     </Col>
