@@ -8,6 +8,7 @@ import Login from "../SignIN_UP/Login";
 import Signup from "../SignIN_UP/Signup";
 import Logout from "../SignIN_UP/Logout";
 import TopNav from "../TopNav/TopNav";
+import UniNav from "../University/UniNav";
 import Authnav from "../TopNav/Authnav";
 import Cart from "../Cart/Cart";
 import DisplayCart from "../Cart/DisplayCart";
@@ -19,12 +20,15 @@ import PaymentStatus from "../Payment/PaymentStatus";
 import User from "../User/User";
 import AllCourse from "../User/AllCourse";
 import Edit from "../User/Edit";
+import UniversityRouting from "../University/UniversityRouting";
 import ProtectedRoute from "../ProtectedRoute";
 
 function Routing() {
     const nav = ()=>{
         if(localStorage.getItem("token")){
             return <Authnav/>
+        }else if(localStorage.getItem("universitytoken")){
+           return <UniNav />
         }else{
             return <TopNav/>
         }
@@ -36,6 +40,7 @@ function Routing() {
                 <Route path="/ContactUs" exact component={ContactUs} />
                 <Route path="/AboutUs" exact component={AboutUs} />
                 <Route path="/" exact component={Dashboard} />
+                <Route path="/university"  component={UniversityRouting} />
                 <Route path='/login' component={Login} />
                 <Route path="/register" component={Signup} />
                 <Route path="/category/:id" exact component={CategoryCard} />

@@ -40,7 +40,7 @@ function Edit() {
         // <form>
             <div className="auth-wrapper">
                 <div className="auth-inner">
-                    <h3>Sign Up</h3>
+                    <h3>Edit</h3>
                     
                     <div className="form-group">
                         <label>First name</label>

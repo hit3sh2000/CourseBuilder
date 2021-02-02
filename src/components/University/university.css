@@ -1,0 +1,8 @@
+.welcome{
+    text-align: center, right, left, justify, start, end;
+    font-weight: lighter, 100, normal, 400, bold, 700, bolder, 900;
+    text-decoration: wavy, dashed, dotted, double, solid, underline, line-through, overline;
+    line-height: normal;
+    letter-spacing: 2;
+    font-family:   Cursive;
+}

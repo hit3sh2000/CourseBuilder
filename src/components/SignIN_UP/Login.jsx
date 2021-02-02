@@ -26,7 +26,6 @@ function Login() {
                 if (!res.data.auth) {
                 } else {
                     let temp = res.data.result._id;
-                    console.log(res.data);
                     localStorage.setItem("token", res.data.token)
                     localStorage.setItem("user", temp)
                     window.location.reload();
