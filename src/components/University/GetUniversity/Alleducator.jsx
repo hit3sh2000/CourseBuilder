@@ -33,8 +33,7 @@ function Alleducator() {
                             <Card.Title>Educator Age :-{item.Educator.E_age}</Card.Title>
                             <br></br>
                             <Card.Text ><h4>Teaches :-{item.course.C_name}</h4></Card.Text>
-                            <Card.Text>Course Description {item.course.E_age}</Card.Text>
-                            <Button variant="primary">Check University</Button>
+                            <Card.Text>Course Description {item.course.C_desc}</Card.Text>
                         </Card.Body>
                     </Card>
                     </Col>

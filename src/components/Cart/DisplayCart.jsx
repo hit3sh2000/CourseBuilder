@@ -24,10 +24,10 @@ function DisplayCard() {
         console.log(c4.data);
         return c4
     };
-    return (
-        <div>
-            <br></br>
-            <Row>
+
+    const Render = (data) =>{
+        if(data){
+            return <Row>
                 <Col md={8}>
                     {coursedata.length === 0 ? (
                         <div>
@@ -117,7 +117,15 @@ function DisplayCard() {
                     </table>
                 </Col>
             </Row>
+        }else{
+            <div> Loading......</div>
+        }
+    }
 
+    return (
+        <div>
+            <br></br>
+            {Render(coursedata)}
         </div>
     )
 }

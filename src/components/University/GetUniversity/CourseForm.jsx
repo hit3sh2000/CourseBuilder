@@ -53,7 +53,6 @@ function CourseForm({ match }) {
             <div className="auth-wrapper">
                 <div className="auth-inner">
                     <h3>Add Course</h3>
-                    
                     <div className="form-group">
                         <label>Course name</label>
                         <input type="text" className="form-control" placeholder="Enter Course name..." id="C_name" value={C_name} onChange={handleInputChange} />
@@ -78,8 +77,7 @@ function CourseForm({ match }) {
                     </select >
                     <br></br>
                     <br></br>
-                    <Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button>
-                    {/* <Link to={'/university/allcourse'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button> </Link> */}
+                    <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button> </Link>
                     <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='danger' onClick={handleFinalChange}>Cancel</Button> </Link>
                 </div>
             </div>
