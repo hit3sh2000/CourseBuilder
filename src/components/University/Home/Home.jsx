@@ -26,7 +26,7 @@ function Home() {
 
             <Row>
                 <Col>
-                    <h1><b><Button variant="dark" size="lg" href={'/university/allcourse'}>Get All Course </Button></b></h1>
+                    <h1><b><Button variant="dark" size="lg" href={'/university/allcourse'}>Get All Course And Schedule Course</Button></b></h1>
                 </Col>
                 <Col>
                     <h1><b><Button variant="dark" size="lg" href={'/university/alleducator'}>Get All Educator Details</Button></b></h1>
