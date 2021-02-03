@@ -4,7 +4,8 @@ import { Carousel } from 'react-bootstrap';
 function Dashboard() {
   return (
     <div>
-      
+      <br></br>
+      <br></br>
       <Carousel>
         <Carousel.Item interval={1000}>
           <img

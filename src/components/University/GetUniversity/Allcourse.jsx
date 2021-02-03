@@ -36,7 +36,7 @@ function Allcourse() {
                             <Card.Title><i>Buy Course At {item.course.C_price}</i></Card.Title>
                             <Card.Subtitle>Duration of this Course is {item.course.C_duration}</Card.Subtitle>
                             <br></br>
-                            <Button variant="primary"><b><i>COURSE</i></b></Button>
+                            <Button variant="primary" href={`/university/schedule/${localStorage.getItem('university')}/${item.course._id}`}><b><i>Schedule Course</i></b></Button>
                         </Card.Body>
                     </Card>
                 </div>

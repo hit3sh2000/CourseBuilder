@@ -19,6 +19,7 @@ import Payment from "../Payment/Payment";
 import PaymentStatus from "../Payment/PaymentStatus";
 import User from "../User/User";
 import AllCourse from "../User/AllCourse";
+import Schedule from "../User/Schedule";
 import Edit from "../User/Edit";
 import UniversityRouting from "../University/UniversityRouting";
 import ProtectedRoute from "../ProtectedRoute";
@@ -55,6 +56,7 @@ function Routing() {
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/user" exact component={User} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/edit" exact component={Edit} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/allCourse" exact component={AllCourse} />
+                <ProtectedRoute isAuth={localStorage.getItem("token")} path="/schedule/:uid/:cid" exact component={Schedule} />
                 
             </div>
         </Router>

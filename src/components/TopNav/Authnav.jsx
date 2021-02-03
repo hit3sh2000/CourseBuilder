@@ -42,7 +42,7 @@ function Authnav() {
                         key={'down'}
                         id={`dropdown-button-drop-${'down'}`}
                         drop={'down'}
-                        variant="secondary"
+                        variant="light"
                         title="CourseBuilder"
                     >
                         {renderCategory()}

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './TopNav.css';
-import { Navbar, Nav, ButtonGroup, Button, DropdownButton } from 'react-bootstrap';
+import { Navbar, Nav, ButtonGroup, Button, DropdownButton,Collapse } from 'react-bootstrap';
 import Category from "../Category/Category";
 // import { A } from "hookrouter";
 
@@ -21,16 +21,18 @@ function TopNav() {
             alt="React Bootstrap logo"
           /></Navbar.Brand>
         <Navbar.Brand>
+          
           <DropdownButton
             as={ButtonGroup}
             key={'down'}
             id={`dropdown-button-drop-${'down'}`}
             drop={'down'}
-            variant="secondary"
+            variant="light"
             title="CourseBuilder"
           >
             {renderCategory()}
           </DropdownButton>
+          
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

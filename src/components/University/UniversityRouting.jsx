@@ -9,6 +9,7 @@ import Allcourse from "./GetUniversity/Allcourse";
 import Alleducator from "./GetUniversity/Alleducator";
 import AddCourse from "./GetUniversity/AddCourse";
 import CourseForm from "./GetUniversity/CourseForm";
+import Schedule from "./GetUniversity/Schedule";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProtectedRoute from "./ProtectedRoute1";
 
@@ -25,6 +26,7 @@ function UniversityRouting() {
                 <ProtectedRoute isAuth={localStorage.getItem("universitytoken")} path="/university/alleducator" exact component={Alleducator} />
                 <ProtectedRoute isAuth={localStorage.getItem("universitytoken")} path="/university/addcourse" exact component={AddCourse} />
                 <ProtectedRoute isAuth={localStorage.getItem("universitytoken")} path="/university/category/:id" exact component={CourseForm} />
+                <ProtectedRoute isAuth={localStorage.getItem("universitytoken")} path="/university/schedule/:uid/:cid" exact component={Schedule} />
             </div>
         </Router>
     )

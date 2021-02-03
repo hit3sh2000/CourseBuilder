@@ -48,7 +48,7 @@ function AllCourse() {
                                         <Row>
                                             <Col>
                                                 <Card><Image src={item.course.C_img} rounded fluid /></Card>
-                                                <Card.Header><h4><b><Button variant="success">Course Price: Rs {item.course.C_price}</Button></b></h4></Card.Header>
+                                                <Card.Header><h4><b><Button variant="success" href={`/schedule/${item.university._id}/${item.course._id}`}>Check Schedule Of {item.course.C_name}</Button></b></h4></Card.Header>
                                             </Col>
 
 
