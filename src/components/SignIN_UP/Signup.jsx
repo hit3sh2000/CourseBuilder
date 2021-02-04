@@ -6,6 +6,24 @@ import './Logsign.css';
 import axios from "../../axios";
 
 function Signup() {
+
+    const [avatar, setAvatar] = useState('');
+
+    const handleFileInputChange = (e) => {
+        const file = e.target.files[0];
+        UploadFile(file);
+        setAvatar(e.target.id);
+    };
+
+    const UploadFile = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            console.log(reader.result);
+            setUsers({...users,avatar:reader.result})
+        };
+    };
+
     const input = {
         U_firstname:"",
         U_lastname:"",
@@ -16,7 +34,7 @@ function Signup() {
         U_age:"", 
         U_gender:"",
         U_contact:"",
-        U_address:""
+        U_address:"",
     }
 
     const [users,setUsers]=useState(input)
@@ -32,7 +50,6 @@ function Signup() {
     }
 
     const handleFinalChange = e =>{
-        // e.preventDefault();
         console.log(users);
         axios.post('/user',users)
     }
@@ -88,13 +105,20 @@ function Signup() {
 
         <div className="form-group">
            <label>Contact No.</label>
-           <input type="text" className="form-control" placeholder="Enter password" id="U_contact" value={U_contact} onChange={handleInputChange} />
+           <input type="text" className="form-control" placeholder="Enter Contact Number" id="U_contact" value={U_contact} onChange={handleInputChange} />
         </div>
 
         <div className="form-group">
         <label>Address</label>
-        <input type="text" className="form-control" placeholder="Enter password" id="U_address" value={U_address} onChange={handleInputChange} />
-     </div>
+        <input type="text" className="form-control" placeholder="Enter Address" id="U_address" value={U_address} onChange={handleInputChange} />
+         </div>
+
+         <div className="form-group">
+        <label>Upload Avatar</label>
+        <input type="file" className="form-control"  id="U_avatar" onChange={handleFileInputChange} />
+         </div>
+
+
         <Link to={'/login'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Sign Up</Button> </Link>
         <p className="forgot-password text-right">
             Already registered <a href="Login">sign in?</a>

@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Logsign.css';
 import axios from "../../axios";
 import { Redirect } from "react-router-dom";
-import RedirectLog from "../helper/RedirectLog"
 
 
 function Login() {
