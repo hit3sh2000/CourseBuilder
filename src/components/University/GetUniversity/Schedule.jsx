@@ -59,8 +59,8 @@ function Schedule({ match }) {
                     </div>
                     <br></br>
                     <br></br>
-                    <Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add Schedule</Button>
-                    {/* <Link to={'/university/allcourse'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button> </Link> */}
+                    {/* <Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add Schedule</Button> */}
+                    <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button> </Link>
                     <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='danger' onClick={handleFinalChange}>Cancel</Button> </Link>
                 </div>
             </div>

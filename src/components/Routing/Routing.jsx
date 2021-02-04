@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route,Redirect } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
+import Footer from "../Footer/Footer";
 import CategoryCard from "../Card/CategoryCard";
 import UniversityCard from "../Card/UniversityCard";
 import Fulldetails from "../Card/Fulldetails";
@@ -14,7 +15,7 @@ import Cart from "../Cart/Cart";
 import DisplayCart from "../Cart/DisplayCart";
 import RemoveCart from "../Cart/RemoveCart";
 import AboutUs from "../AboutUs/AboutUs";
-import ContactUs from "../ContactUs/ContactUs";
+import ContactUs from "../ContactUs/Contact";
 import Payment from "../Payment/Payment";
 import PaymentStatus from "../Payment/PaymentStatus";
 import User from "../User/User";
@@ -57,6 +58,8 @@ function Routing() {
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/edit" exact component={Edit} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/allCourse" exact component={AllCourse} />
                 <ProtectedRoute isAuth={localStorage.getItem("token")} path="/schedule/:uid/:cid" exact component={Schedule} />
+                <Route path="/"  component={Footer} />
+
                 
             </div>
         </Router>

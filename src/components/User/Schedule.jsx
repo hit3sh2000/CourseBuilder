@@ -34,7 +34,7 @@ function Schedule({ match }) {
                                     <Row>
                                         <Col  >
                                             <div><Image src={`${Schedule2.course.C_img}`} alt={Schedule2.course.C_name} fluid thumbnail style={{ "borderWidth": "1px", 'borderColor': "#000000", 'borderStyle': 'solid' }} /></div>
-                                            <div><b><h5 ><i >Course Name{Schedule2.course.C_name}</i></h5></b></div>
+                                            <div><b><h5 ><i >Course Name :- {Schedule2.course.C_name}</i></h5></b></div>
                                         </Col>
                                         <Col >
                                             <i><h3><div style={{ "borderWidth": "1px", 'borderColor': "#000000", 'borderStyle': 'solid','backgroundColor':'#BCC6CC' }}>Topic :-{item.S_topic}</div></h3></i>
