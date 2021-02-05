@@ -14,12 +14,12 @@ function Contact() {
             <div class="col-lg-6">
               <div class="card-shadow">
               {/* https://cdn.pixabay.com/photo/2015/11/06/11/46/call-center-1026460_960_720.jpg */}
-                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/2.jpg" class="img-fluid" />
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/2.jpg" alt={'1image1'} class="img-fluid" />
               </div>
             </div>
             <div class="col-lg-6">
               <div class="contact-box ml-3">
-                <img src="https://cdn.pixabay.com/photo/2016/10/25/16/26/contact-us-1769323_960_720.png" class="img-fluid" />
+                <img src="https://cdn.pixabay.com/photo/2016/10/25/16/26/contact-us-1769323_960_720.png" alt={'1image1'} class="img-fluid" />
                 <form class="mt-4">
                   <div class="row">
                     <div class="col-lg-12">
@@ -55,7 +55,7 @@ function Contact() {
                   <div class="col-lg-4 col-md-4">
                     <div class="card-body d-flex align-items-center c-detail pl-0">
                       <div class="mr-3 align-self-center">
-                        <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png" />
+                        <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png" alt={'1image1'} />
                       </div>
                       <div class="">
                         <h6 class="font-weight-medium">Address</h6>
@@ -67,7 +67,7 @@ function Contact() {
                   <div class="col-lg-4 col-md-4">
                     <div class="card-body d-flex align-items-center c-detail">
                       <div class="mr-3 align-self-center">
-                        <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png" />
+                        <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png" alt={'1image1'} />
                       </div>
                       <div class="">
                         <h6 class="font-weight-medium">Phone</h6>
@@ -79,7 +79,7 @@ function Contact() {
                   <div class="col-lg-4 col-md-4">
                     <div class="card-body d-flex align-items-center c-detail">
                       <div class="mr-3 align-self-center">
-                        <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png" />
+                        <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png" alt={'1image1'} />
                       </div>
                       <div class="">
                         <h6 class="font-weight-medium">Email</h6>

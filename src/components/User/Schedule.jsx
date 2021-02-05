@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Image, Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from '../../axios'
