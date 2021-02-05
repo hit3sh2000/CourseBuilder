@@ -6,6 +6,24 @@ import axios from "../../../axios";
 
 import { Redirect, Link } from "react-router-dom";
 function RegisterUniversity() {
+
+    const [avatar, setAvatar] = useState('');
+
+    const handleFileInputChange = (e) => {
+        const file = e.target.files[0];
+        UploadFile(file);
+        setAvatar(e.target.id);
+    };
+
+    const UploadFile = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            console.log(reader.result);
+            setUniversityRegister({ ...universityRegister, avatar:  reader.result  })
+        };
+    };
+
     const input = {
         Us_name:'',
         Us_email:'',
@@ -21,7 +39,6 @@ function RegisterUniversity() {
     const handleInputChange = e => {
         setUniversityRegister({ ...universityRegister, [e.target.id]: e.target.value })
         console.log(universityRegister);
-
     }
     const handleFinalChange = e => {
         axios.post('/university', universityRegister)
@@ -60,6 +77,10 @@ function RegisterUniversity() {
                 <div className="form-group">
                     <label>University Address</label>
                     <input type="text" className="form-control" placeholder="Enter University Address" id="Us_address" value={Us_address} onChange={handleInputChange} />
+                </div>
+                <div className="form-group">
+                    <label>Upload Avatar</label>
+                    <input type="file" className="form-control" id="Us_img" onChange={handleFileInputChange} />
                 </div>
 
                 <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Sign Up</Button> </Link>
