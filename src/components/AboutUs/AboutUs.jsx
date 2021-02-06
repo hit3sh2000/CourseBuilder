@@ -1,81 +1,52 @@
 import React from 'react';
-// import './index.css';
-import Slider from "react-slick";
-
-// Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
+import { Col, Container, Image, Row } from 'react-bootstrap';
 function AboutUs() {
 
-  const config = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '50px',
-    autoplay: true,
-    autoplaySpeed: 1500,
-  };
-
-  // const [settings, setSettings] = useState(config);
-
-  const products = [
-    {
-      img: '/images/product1.jpg',
-      title: 'Dolore magna',
-      text: 'Lorem ipsum dolor sit amet elit.'
-    },
-    {
-      img: '/images/product2.jpg',
-      title: 'Eget est lorem',
-      text: 'Lorem Ipsum adipiscing elit ipsum.'
-    },
-    {
-      img: '/images/product3.jpg',
-      title: 'Tempus imperdiet',
-      text: 'Orci porta non pulvinar neque laoreet.'
-    },
-    {
-      img: '/images/product4.jpg',
-      title: 'Mattis rhoncus',
-      text: 'Bibendum neque egestas congue quisque.'
-    },
-    {
-      img: '/images/product5.jpg',
-      title: 'Odio ut enim',
-      text: 'Mattis rhoncus urna neque viverra justo.'
-    }
-  ]
-
-  // const onChangeCenterMode = e => {
-  //   if (e.target.checked) {
-  //     setSettings({
-  //       ...config,
-  //       centerMode: true,
-  //       centerPadding: '50px'
-  //     });
-  //   } else {
-  //     setSettings(config);
-  //   }
-  // }
-
   return (
-    <div className="AboutUs">
+    <div>
+            <h1 style={{ "color": 'Highlight', "fontFamily": 'fantasy' }}>COURSEBUILDER</h1>
 
-      <Slider {...config}>
-        {products.map((x, i) => {
-          return <div key={i} className="img-card" >
-            <img className="img" src={x.img} alt={'image1'} />
-            <div class="card-body">
-              <div className="card-title">{x.title}</div>
-              <div className="card-text">{x.text}</div>
-            </div>
-          </div>
-        })}
-      </Slider>
+      <Image src="https://cdn.pixabay.com/photo/2016/05/04/07/56/businessman-1370983_960_720.jpg" rounded style={{ "width": "100%",'height':'550px' }} />
+      <Container>
+        <Row>
+          <h3 style={{ "color": 'Highlight',  }}>
+            COURSEBUILDER is the global online learning platform that offers anyone, anywhere to select any Course from any University and Build their own course as they want from any where.
+            </h3>
+          <Col>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p>
+              <h3>We believe, Learning is the source of human progress.</h3>
+              <p style={{ "color": '#21414E', "fontFamily": 'cursive' }}>It has the power to transform our world
+              from illness to health,
+              from poverty to prosperity,
+              from conflict to peace.
+
+              It has the power to transform our lives
+              for ourselves,
+              for our families,
+              for our communities.
+
+              No matter who we are or where we are,
+              learning empowers us to change and grow
+              and redefine what’s possible.
+              That’s why access to the best learning is a right, not a privilege.
+
+              And that’s why Coursera is here.
+              We partner with the best institutions
+              to bring the best learning
+              to every corner of the world.
+
+              So that anyone, anywhere has the power to
+              transform their life through learning.
+              </p>
+            </p>
+
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

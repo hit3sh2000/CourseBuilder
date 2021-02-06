@@ -44,7 +44,7 @@ function Dashboard() {
       {/* </div> */}
       <br></br><br></br><br></br>
       <Container >
-      <div className="AboutUs" style={{"backgroundColor":"lightcyan"}}>
+      {/* <div className="AboutUs" >
             <h2><b>Recommendation Course</b></h2>
             <Slider {...config}>
               {course && course.map(item => {
@@ -63,7 +63,7 @@ function Dashboard() {
               })
               }
             </Slider>
-          </div>
+          </div> */}
         <br /><br /><br /><br /><br /><br />
 
         <Row style={{ 'margin': '5px', 'textAlign': "inherit" }}>
