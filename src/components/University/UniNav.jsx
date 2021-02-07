@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col, Row, Button, Navbar, Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ContactsIcon from '@material-ui/icons/Contacts';
 import { Redirect, Link } from 'react-router-dom';
 import './university.css'
 
@@ -39,7 +41,7 @@ function UniNav() {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav>
-                                <Nav.Link href='/'><Button variant='light' onClick={Logout}>LogOut</Button></Nav.Link>
+                                <Nav.Link href='/'><Button variant='light' onClick={Logout}>LogOut<ExitToAppIcon/></Button></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Col>

@@ -14,7 +14,7 @@ function DisplayCard() {
                 setTotal(res.data.total)
                 localStorage.setItem('total', res.data.total)
             });
-    }, [])
+    })
 
     const [total, setTotal] = useState([]);
 

@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import axios from "../../axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import InfoIcon from '@material-ui/icons/Info';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import './TopNav.css';
 import { Navbar, Nav, ButtonGroup, DropdownButton, Button } from 'react-bootstrap';
 import Category from "../Category/Category";
@@ -51,14 +55,14 @@ function Authnav() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href='/user'><Button variant='light'>Welcome</Button></Nav.Link>
+                        <Nav.Link href='/user'><Button variant='light'>Click here Your Details<EmojiPeopleIcon/></Button></Nav.Link>
                     </Nav>
 
                     <Nav>
-                        <Nav.Link href='/AboutUs'><Button variant='light'>About Us</Button></Nav.Link>
-                        <Nav.Link href='/ContactUs'><Button variant='light'>Contact Us</Button></Nav.Link>
+                        <Nav.Link href='/AboutUs'><Button variant='light'>About Us<InfoIcon/></Button></Nav.Link>
+                        <Nav.Link href='/ContactUs'><Button variant='light'>Contact Us <ContactsIcon/></Button></Nav.Link>
                         <Nav.Link href='/cart'><Button variant='light'><ShoppingCartIcon/>Cart</Button></Nav.Link>
-                        <Nav.Link href='/Logout'><Button variant='light'>Logout</Button></Nav.Link>
+                        <Nav.Link href='/Logout'><Button variant='light'>Logout<ExitToAppIcon/></Button></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

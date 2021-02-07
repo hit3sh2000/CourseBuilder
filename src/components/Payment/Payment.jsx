@@ -2,11 +2,10 @@ import axios from '../../axios'
 import React, { useEffect, useState } from 'react'
 
 function Payment() {
-
-    function isDate(val){
+    function isDate(val) {
         // Cross realm comptatible
         return Object.prototype.toString.call(val) === '[object Date]'
-    };
+    }
 
     function isObj(val) {
         return typeof val === 'object'
@@ -24,7 +23,6 @@ function Payment() {
         const form = document.createElement('form')
         form.setAttribute('method', 'post')
         form.setAttribute('action', action)
-        // form.setAttribute('target', target)
 
         Object.keys(params).forEach(key => {
             const input = document.createElement('input')
@@ -37,15 +35,13 @@ function Payment() {
         return form
     }
 
-    function post(details) {
-        const form = buildForm(details)
+    function post(detail) {
+        const form = buildForm(detail)
         document.body.appendChild(form)
         form.submit()
         form.remove()
     }
-
-
-    const [dummy, setDummy] = useState()
+    
     async function processPayment() {
         const buy = await axios.post(`/Pay`, {
             id: localStorage.getItem('user'),
@@ -53,11 +49,10 @@ function Payment() {
         })
         console.log(buy.data);
         var details = {
-            action:"https://securegw-stage.paytm.in/order/process",
+            action: "https://securegw-stage.paytm.in/order/process",
             params: buy.data
         }
         post(details)
-        setDummy(buy.data)
         return buy.data
     }
     useEffect(() => {
@@ -65,7 +60,6 @@ function Payment() {
     }, [])
     return (
         <div>
-            {/* {dummy} */}
         </div>
     )
 }

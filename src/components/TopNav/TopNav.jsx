@@ -1,6 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './TopNav.css';
+import SchoolIcon from '@material-ui/icons/School';
+import CategoryIcon from '@material-ui/icons/Category';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import PersonIcon from '@material-ui/icons/Person';
+import InfoIcon from '@material-ui/icons/Info';
+import AddIcon from '@material-ui/icons/Add';
 import { Navbar, Nav, ButtonGroup, Button, DropdownButton,Collapse } from 'react-bootstrap';
 import Category from "../Category/Category";
 // import { A } from "hookrouter";
@@ -28,7 +34,7 @@ function TopNav() {
             id={`dropdown-button-drop-${'down'}`}
             drop={'down'}
             variant="light"
-            title="CourseBuilder"
+            title={"Explore Courses"}
           >
             {renderCategory()}
           </DropdownButton>
@@ -38,14 +44,14 @@ function TopNav() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href='/login'><Button variant='light'>Login</Button></Nav.Link>
-            <Nav.Link href='/register'><Button variant='light'>Register</Button></Nav.Link>
+            <Nav.Link href='/login'><Button variant='light'>Login<PersonIcon/></Button></Nav.Link>
+            <Nav.Link href='/register'><Button variant='light'>Register<AddIcon/></Button></Nav.Link>
           </Nav>
 
           <Nav>
-            <Nav.Link href='/AboutUs'><Button variant='light'>About Us</Button></Nav.Link>
-            <Nav.Link href='/ContactUs'><Button variant='light'>Contact Us</Button></Nav.Link>
-            <Nav.Link href='/university'><Button variant='light'>UniversityLogin</Button></Nav.Link>
+            <Nav.Link href='/AboutUs'><Button variant='light'>About Us<InfoIcon/></Button></Nav.Link>
+            <Nav.Link href='/ContactUs'><Button variant='light'>Contact Us<ContactsIcon/></Button></Nav.Link>
+            <Nav.Link href='/university'><Button variant='light'>UniversityLogin<SchoolIcon/></Button></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

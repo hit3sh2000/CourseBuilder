@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import {  Button, Row, Col, Form } from "react-bootstrap";
+import { Button, Row, Col, Form } from "react-bootstrap";
 import './Card.css';
+import { useForm } from 'react-hook-form';
 import axios from "../../../axios";
 import { Link } from 'react-router-dom';
 
 function CourseForm({ match }) {
 
-    const [course_avatar, setCourse_Avatar] = useState('');
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = async (data) => {
+        data.category = match.params.id
+        data.course_avatar = course_avatar
+        console.log(data);
+        axios.post(`/course/university/${localStorage.getItem('university')}`, data)
+        .then(res=>{
+            window.location.replace('/university')
+        })
+    };
 
+    const [course_avatar, setCourse_Avatar] = useState('');
     const handleFileInputChange = (e) => {
         const file = e.target.files[0];
         UploadFile(file);
@@ -19,21 +30,16 @@ function CourseForm({ match }) {
         reader.readAsDataURL(file);
         reader.onloadend = () => {
             console.log(reader.result);
-            setCourse({ ...course, course_avatar: reader.result })
+            setCourse_Avatar(reader.result)
         };
     };
-
-
-
     const input = {
         C_name: "",
         C_desc: "",
         C_duration: "",
         C_price: "",
         category: match.params.id,
-
     }
-    const [course, setCourse] = useState(input)
     const [educator, setEducator] = useState()
     useEffect(() => {
         fetchEducator()
@@ -47,62 +53,53 @@ function CourseForm({ match }) {
         const Edu = await axios.get("/educator")
         return Edu
     }
-    const {
-        C_name, C_desc, C_duration, C_price, category, educatorinfo
-    } = course
 
-    const handleInputChange = e => {
-        setCourse({ ...course, [e.target.id]: e.target.value })
-        console.log(e.target.id + " " + e.target.value);
 
-    }
-
-    const handleFinalChange = e => {
-        // e.preventDefault();
-        console.log(course);
-        axios.post(`/course/university/${localStorage.getItem('university')}`, course)
-    }
-
-    const handleInputChangeforEducator = e => {
-        console.log(e.target.value);
-    }
 
     return (
 
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className="auth-wrapper">
                 <div className="auth-inner">
                     <h3>Add Course</h3>
                     <div className="form-group">
                         <label>Upload Course Picture</label>
-                        <input type="file" className="form-control" id="C_img" onChange={handleFileInputChange} />
+                        <input type="file" className="form-control" name="C_img" onChange={handleFileInputChange} ref={register({ required: true })} />
+                        {errors.C_img && 'This field is required.'}
                     </div>
                     <div className="form-group">
                         <label>Course name</label>
-                        <input type="text" className="form-control" placeholder="Enter Course name..." id="C_name" value={C_name} onChange={handleInputChange} />
+                        <input type="text" className="form-control" placeholder="Enter Course name..." name="C_name" ref={register({ required: true })} />
+                        {errors.C_name && 'This field is required.'}
                     </div>
                     <div className="form-group">
                         <label>Course description</label>
-                        <input type="text" className="form-control" placeholder="Enter description..." id="C_desc" value={C_desc} onChange={handleInputChange} />
+                        <input type="text" className="form-control" placeholder="Enter description..." name="C_desc" ref={register({ required: true })} />
+                        {errors.C_desc && 'This field is required.'}
                     </div>
                     <div className="form-group">
                         <label>Duration</label>
-                        <input type="text" className="form-control" placeholder="Enter Course Duration..." id="C_duration" value={C_duration} onChange={handleInputChange} />
+                        <input type="text" className="form-control" placeholder="Enter Course Duration..." name="C_duration" ref={register({ required: true })} />
+                        {errors.C_duration && 'This field is required.'}
                     </div>
                     <div className="form-group">
                         <label>Course Price</label>
-                        <input type="email" className="form-control" placeholder="Enter Course Price" id="C_price" value={C_price} onChange={handleInputChange} />
+                        <input type="text" className="form-control" placeholder="Enter Course Price" name="C_price" ref={register({ required: true })} />
+                        {errors.C_price && 'This field is required.'}
                     </div>
-                    <label>Educator :- </label>  <select id={'educatorinfo'} value={educatorinfo} onChange={handleInputChange}>
-                        <option >Select One Educator</option >
+                    <label>Educator :- </label>
+                    <select name='educatorinfo' ref={register({ required: true })}>
+                        {errors.educatorinfo && 'This field is required.'}
+                        <option >Educator is Not Selected</option >
                         {educator && educator.map(item => {
                             return <option id={item._id} value={item.E_name}  >{item.E_name}</option >
                         })}
                     </select >
                     <br></br>
                     <br></br>
-                    <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button> </Link>
-                    <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='danger' onClick={handleFinalChange}>Cancel</Button> </Link>
+                    <Button type="submit" className="btn btn-primary btn-block" variant='primary' > Add Course</Button>
+                    {/* <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='primary' onClick={handleFinalChange}>Add</Button> </Link> */}
+                    <Link to={'/university'}><Button className="btn btn-primary btn-block" variant='danger' >Cancel</Button> </Link>
                 </div>
             </div>
         </form>

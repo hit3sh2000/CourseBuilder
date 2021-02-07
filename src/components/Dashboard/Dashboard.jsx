@@ -44,7 +44,7 @@ function Dashboard() {
       {/* </div> */}
       <br></br><br></br><br></br>
       <Container >
-      {/* <div className="AboutUs" >
+      <div className="AboutUs" >
             <h2><b>Recommendation Course</b></h2>
             <Slider {...config}>
               {course && course.map(item => {
@@ -63,7 +63,7 @@ function Dashboard() {
               })
               }
             </Slider>
-          </div> */}
+          </div>
         <br /><br /><br /><br /><br /><br />
 
         <Row style={{ 'margin': '5px', 'textAlign': "inherit" }}>
@@ -110,7 +110,7 @@ function Dashboard() {
             <br /><br /><br />
             <h2 style={{ 'fontFamily': 'Comic Sans MS' }}>Your Course to Success</h2>
             <br /><br />
-            <h2 style={{ 'fontFamily': 'Comic Sans MS' }}>Achieve your goals with Coursera </h2>
+            <h2 style={{ 'fontFamily': 'Comic Sans MS' }}>Achieve your goals with CourseBuilder </h2>
           </Col>
         </Row>
       </Container>
