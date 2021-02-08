@@ -4,6 +4,7 @@ import { Carousel, Col, Container, Row, Card, Button } from 'react-bootstrap';
 import Slider from "react-slick";
 import axios from "../../axios";
 // Import css files
+import './Dashboard.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -39,27 +40,27 @@ function Dashboard() {
   return (
     <div  >
       <br></br><br></br>
-      <Container >
-      <div className="AboutUs" >
-            <h2><b>Recommendation Course</b></h2>
-            <Slider {...config}>
-              {course && course.map(item => {
-                return <div className="h">
-                  <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={item.C_img} style={{ height: 200 }} />
-                    <Card.Body>
-                      <Card.Title><b>{item.C_name}</b></Card.Title>
-                      <Card.Title><i>Buy Course At Rs {item.C_price}</i></Card.Title>
-                      <Card.Subtitle>Duration of this Course is {item.C_duration}</Card.Subtitle>
-                      <br></br>
-                      <Button href={`/course/${item._id}`} variant="primary">Check University</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
-              })
-              }
-            </Slider>
-          </div>
+      <Container>
+        <div className="AboutUs"  >
+          <h2><b>Recommendation Course</b></h2>
+          <Slider {...config}>
+            {course && course.map(item => {
+              return <div className="h">
+                <Card style={{ 'margin': '15px' }}>
+                  <Card.Img variant="top" src={item.C_img} style={{ height: 200 }} />
+                  <Card.Body>
+                    <Card.Title><b>{item.C_name}</b></Card.Title>
+                    <Card.Title><i>Buy Course At Rs {item.C_price}</i></Card.Title>
+                    <Card.Subtitle>Duration of this Course is {item.C_duration}</Card.Subtitle>
+                    <br></br>
+                    <Button href={`/course/${item._id}`} variant="primary">Check University</Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            })
+            }
+          </Slider>
+        </div>
         <br /><br /><br /><br /><br /><br />
         <h1 style={{ 'fontFamily': 'fantasy', 'textShadow': '#49FF00 1px 0 20px', "textAlign": 'start' }}><i><b>CourseBuilder Nerver Stop Learning..........</b></i></h1>
 

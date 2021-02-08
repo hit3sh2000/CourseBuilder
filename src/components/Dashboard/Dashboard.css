@@ -1,0 +1,11 @@
+
+.h{
+    overflow: hidden;
+    transition: 0.3s;
+    
+  }
+  
+  .h:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
