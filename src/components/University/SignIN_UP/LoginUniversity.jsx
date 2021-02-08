@@ -3,7 +3,7 @@ import { Button, Col, Row } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Logsign.css';
 import axios from "../../../axios";
-import { Link, Redirect } from "react-router-dom";
+import {  Redirect } from "react-router-dom";
 
 function LoginUniversity() {
     const input = {

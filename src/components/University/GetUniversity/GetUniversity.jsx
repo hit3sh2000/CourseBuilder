@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import {  Card, Col, Row } from 'react-bootstrap';
 import axios from "../../../axios";
 
 function GetUniversity() {

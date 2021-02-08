@@ -55,7 +55,7 @@ function Authnav() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href='/user'><Button variant='light'>Click here Your Details<EmojiPeopleIcon/></Button></Nav.Link>
+                        <Nav.Link href='/user'><Button variant='light'>Click here to Check Your Details<EmojiPeopleIcon/></Button></Nav.Link>
                     </Nav>
 
                     <Nav>

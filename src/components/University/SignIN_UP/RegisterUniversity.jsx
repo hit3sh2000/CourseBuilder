@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useForm } from 'react-hook-form';
 import './Logsign.css';
 import axios from "../../../axios";
-
-import { Redirect, Link } from "react-router-dom";
 function RegisterUniversity() {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
-        const temp = {}
         data.avatar = avatar
         console.log(data);
         axios.post('/university', data)

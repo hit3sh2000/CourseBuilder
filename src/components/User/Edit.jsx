@@ -10,7 +10,6 @@ function Edit() {
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
-        const temp = {}
         data.avatar = avatar
         console.log(data);
         axios.post('/user/edit', data)

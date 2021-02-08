@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Card, Button, Row, Col, Form } from "react-bootstrap";
+import React, {  useState } from 'react'
+import {  Button } from "react-bootstrap";
 import './Card.css';
 import axios from "../../../axios";
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ function Schedule({ match }) {
     const [schedule1, setSchedule1] = useState(input)
     
     const {
-        S_topic, S_date, S_time, S_link,Us_id,C_id
+        S_topic, S_date, S_time, S_link
     } = schedule1
 
     const handleInputChange = e => {
@@ -47,11 +47,11 @@ function Schedule({ match }) {
                     </div>
                     <div className="form-group">
                         <label>Schedule Date</label>
-                        <input type="text" className="form-control" placeholder="Enter Date..." id="S_date" value={S_date} onChange={handleInputChange} />
+                        <input type="date" className="form-control" placeholder="Enter Date..." id="S_date" value={S_date} onChange={handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Schedule Time </label>
-                        <input type="text" className="form-control" placeholder="Enter Schedule Time..." id="S_time" value={S_time} onChange={handleInputChange} />
+                        <input type="time" className="form-control" placeholder="Enter Schedule Time..." id="S_time" value={S_time} onChange={handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Schedule Link</label>

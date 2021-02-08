@@ -38,11 +38,7 @@ function Dashboard() {
 
   return (
     <div  >
-      <br></br>
-      {/* <div style={{ 'marginLeft':'135px',"width":'80%', 'textAlign': "inherit",'padding':'30px','backgroundColor':'#A3D2E5','borderRadius':'100px' }}> */}
-      <h1 style={{ 'fontFamily': 'fantasy', 'textShadow': '#49FF00 1px 0 20px', "textAlign": 'start' }}><i><b>CourseBuilder Nerver Stop Learning..........</b></i></h1>
-      {/* </div> */}
-      <br></br><br></br><br></br>
+      <br></br><br></br>
       <Container >
       <div className="AboutUs" >
             <h2><b>Recommendation Course</b></h2>
@@ -53,7 +49,7 @@ function Dashboard() {
                     <Card.Img variant="top" src={item.C_img} style={{ height: 200 }} />
                     <Card.Body>
                       <Card.Title><b>{item.C_name}</b></Card.Title>
-                      <Card.Title><i>Buy Course At {item.C_price}</i></Card.Title>
+                      <Card.Title><i>Buy Course At Rs {item.C_price}</i></Card.Title>
                       <Card.Subtitle>Duration of this Course is {item.C_duration}</Card.Subtitle>
                       <br></br>
                       <Button href={`/course/${item._id}`} variant="primary">Check University</Button>
@@ -65,6 +61,7 @@ function Dashboard() {
             </Slider>
           </div>
         <br /><br /><br /><br /><br /><br />
+        <h1 style={{ 'fontFamily': 'fantasy', 'textShadow': '#49FF00 1px 0 20px', "textAlign": 'start' }}><i><b>CourseBuilder Nerver Stop Learning..........</b></i></h1>
 
         <Row style={{ 'margin': '5px', 'textAlign': "inherit" }}>
           <Col style={{ "color": "#000000", 'textAlign': "inherit" }}>
